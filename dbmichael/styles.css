@@ -1,0 +1,778 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Fallback for modern browsers */
+}
+
+p {
+    line-height: 20px;
+}
+
+main {
+    flex: 1; /* Pushes footer down */
+}
+
+img {
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+/*== Navbar ==*/
+
+#navbar {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Added for vertical alignment */
+    padding: 15px 30px; /* Added padding instead of margin */
+    background: white; /* Ensure background */
+    position: relative; /* For absolute children */
+    margin: 0; /* Reset margin */
+}
+
+/* 
+#navbar * {
+    border: 1px solid red;
+}
+*/
+
+#navbar a {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    font-weight: 500;
+    white-space: nowrap; /* Prevent line breaks */
+    padding: 5px 0; /* Better click area */
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    gap: 25px; /* Space between nav items */
+    margin: 0; /* Remove your 30px top margin */
+    padding: 0; /* Remove default padding */
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-left: 20px; /* Space from main nav */
+}
+
+#navbar a:hover {
+    color: #ff924f;
+}
+
+.logo {
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between logo and text */
+}
+
+.logo img {
+    height: 40px; /* Fixed logo size */
+}
+
+.mobile-menu-toggle {
+    display: none;
+}
+
+/* ===== CARDS ===== */
+
+#card-section {
+    padding: 48px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Ensures responsiveness */
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.case-study-link {
+    text-decoration: none;
+    color: inherit;
+    display: block; /* Ensures the link covers the entire card */
+}
+
+/* --- Image Container & Hover Effects --- */
+.card-image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    aspect-ratio: 16/9;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-image {
+    transform: scale(1.03);
+}
+
+/* --- Overlay & Text Reveal (for Orlando Film Festival) --- */
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    opacity: 1;
+    transition: opacity 0.3s ease, background 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Hide text by default, show on hover */
+.image-overlay h3,
+.image-overlay p {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .image-overlay {
+    background: rgba(0, 0, 0, 0.7); /* Darker on hover for better text contrast */
+}
+
+.card:hover .image-overlay h3,
+.card:hover .image-overlay p {
+    opacity: 1; /* Reveal text on hover */
+}
+
+/* --- Typography --- */
+.card h3 {
+    font-size: 25px;
+    margin: 0;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.card p {
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.card:hover h3 {
+    color: #ff924f; /* Or #e07d3a for hover state */
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+    margin-top: auto; /* Backup stickiness */
+    width: 100%;
+    background: #333; /* Example color - change as needed */
+    padding: 2rem 0;
+}
+  
+.footer-section {
+    display: flex;
+    justify-content: space-between; /* Better than margin-left: auto */
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+  
+.footer-section p {
+    margin-left: 0; /* Reset your existing margin */
+    color: #101010; /* Added for visibility */
+}
+  
+.footer-section a {
+    color: #ff924f;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+  
+.footer-section a:hover {
+    color: #ffad73;
+}
+  
+.social-links {
+    display: flex;
+    gap: 1rem; /* Space between social icons */
+}
+  
+.copyright {
+    text-align: center;
+    margin-top: 2rem;
+    color: #101010;
+    font-size: 0.9rem;
+}
+
+/* ===== TYPOGRAPHY ===== */
+
+h2, h3, h4 {
+    font-family: sans-serif;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: #ff924f;
+}
+
+#hero-1 span {
+    color: #ff924f;
+}
+
+strong {
+    color: #ff924f;
+}
+
+/* ==Body== */
+
+.single-column {
+    min-width: 500px;
+    margin: 0px auto;}
+
+.side-by-side {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+    
+.side-by-side .image-container {
+    flex: 1;
+}
+    
+.side-by-side .text-container {
+    flex: 1;padding: 36px;
+}
+    
+    
+.side-by-side .image-container img {
+    width: 100%;
+}
+    
+.side-by-side .text-container h1 {
+    font-size: 40px;
+    text-align: center;
+
+}
+
+.side-by-side .text-container p {
+    font-size: 18px;
+    margin-bottom: 50px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 20px;
+}
+
+.side-by-side .text-container a {
+    font-size: 20px;
+    text-decoration: none;
+    display: flex;
+    background-color: #ff924f;
+    color: white;
+    padding: 20px; 
+    border-radius: 12px;
+    justify-content: center;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.side-by-side .text-container a:hover {
+    background-color: #e07d3a; /* Slightly darker on hover */
+  }
+
+.side-by-side span {
+    color: #ff924f;
+}
+
+ul {
+    list-style: none;
+}
+
+/* page titles */
+.title {
+    text-align: center;        /* Centers all text content */
+    display: flex;             /* Enables flexbox */
+    flex-direction: column;    /* Stacks children vertically */
+    align-items: center;       /* Centers children horizontally */
+    justify-content: center;   /* Centers children vertically (if container has height) */
+    max-width: 800px;          /* Limits width for better readability */
+    margin: 0 auto;            /* Centers the div horizontally */
+    padding: 2rem;             /* Adds internal spacing */
+  }
+  
+  .title h1 {
+    margin-bottom: 1rem;       /* Space between heading and paragraph */
+    font-size: 2.5rem;         /* Larger heading size */
+  }
+  
+  .title p {
+    margin: 0 auto;            /* Centers paragraph within container */
+    line-height: 1.6;          /* Better paragraph spacing */
+    font-size: 1rem;         /* Slightly larger paragraph text */
+  }
+
+/* project cta */
+
+#project-cta {
+    text-align: center;        
+    display: flex;             
+    flex-direction: column;    
+    align-items: center;       
+    justify-content: center;   
+    max-width: 800px;          
+    margin: 0 auto; 
+    padding: 2rem; 
+  }
+
+  #project-cta a {
+    font-size: 20px;
+    text-decoration: none;
+    display: flex;
+    background-color: #ff924f;
+    color: white;
+    padding: 20px; 
+    border-radius: 12px;
+    justify-content: center;
+    width: 200px;
+    margin: 0 auto;
+}
+
+#project-cta a:hover {
+    background-color: #e07d3a; /* Slightly darker on hover */
+}
+
+#project-cta h1 {
+    margin-bottom: 1rem;       /* Space between h1 and paragraph */
+}
+
+#project-cta p {
+    margin-bottom: 2rem;       /* Space between paragraph and button */
+    max-width: 600px;          /* Optional: limits paragraph width */
+}
+
+/*===== Case Study =====*/
+
+.case-study-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+  
+.case-study-item {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+  
+.case-study-item:hover {
+    transform: translateY(-5px);
+}
+  
+.case-study-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+  
+.case-study-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: black;
+    text-align: center;
+}
+
+.case-study-item:hover {
+    background-color: black;
+    opacity: 60%;
+}
+  
+.case-study-overlay h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+#case-study-header {
+    align-items: center;
+    text-align: center;
+}
+
+/* Form Container */
+.form-container {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.form-container h1 {
+    color: #0a0a0a;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.subtitle {
+    color: #000000;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+/* Form Elements */
+.form-container h2 {
+    text-align: center;
+}
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #444;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #ff924f;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 146, 79, 0.2);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* ===== SERVICES CHECKLIST ===== */
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    align-items: start;
+}
+  
+.services-column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-right: 20px;
+}
+
+.service-option {
+    display: flex;
+    align-items: center;
+    min-height: 24px;
+    color: #000000; /* Pure black text */
+    font-family: sans-serif;
+    font-size: 1rem;
+}
+  
+.checkmark {
+    width: 20px; /* Increased from 18px (original) */
+    height: 20px; /* Maintain square aspect ratio */
+    border: 2px solid #cccccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    background: white;
+    position: relative;
+    flex-shrink: 0; /* Prevents shrinking */
+}
+  
+  /* Checked state */
+.service-option input:checked ~ .checkmark {
+background: #ff924f; /* Your orange color */
+border-color: #ff924f;
+}
+
+/* White checkmark */
+.checkmark:after {
+    left: 6px; /* Adjusted from 5px */
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+
+.service-option input:checked ~ .checkmark:after {
+display: block;
+}
+
+/* Hide default checkbox */
+.service-option input {
+position: absolute;
+opacity: 0;
+cursor: pointer;
+height: 0;
+width: 0;
+}
+
+/* Submit Button */
+.submit-btn {
+    background: #ff924f;
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background: #e07d3a;
+}
+
+/* ===== Base Styles ===== */
+.page-title h2 {
+    font-size: 2.5rem;          /* 40px */
+    font-weight: 700;
+    margin-bottom: 1.5rem;      /* 24px */
+    text-align: center;
+    position: relative;
+  }
+  
+  /* ===== Content Container ===== */
+  .content-container {
+    max-width: 720px;           /* Optimal reading width */
+    margin: 0 auto;
+    padding: 0 1.5rem;          /* Responsive side padding */
+  }
+  
+  /* ===== Typography ===== */
+  .about-content {
+    font-size: 1.125rem;        /* 18px base */
+    line-height: 1.7;           /* Improved readability */
+    color: #262626;
+  }
+  
+  .about-content p {
+    margin-bottom: 1.5rem;      /* Consistent paragraph spacing */
+  }
+  
+  .about-content strong {
+    color: #ff924f;                /* Darker for emphasis */
+    font-weight: 600;
+  }
+
+  .about-image-right {
+    width: 200px;
+    height: 200px;
+    border-radius: 15%; /* Circular image */
+    shape-outside: circle(); /* Text wraps around */
+    float: right;
+    margin: 0 0 1.5rem 1.5rem; /* Space between image and text */
+    object-fit: cover;
+}
+  
+  /* ===== Decorative Elements ===== */
+  .about-content p:last-child {
+    text-align: center;
+    font-size: 1.25rem;         /* 20px */
+    margin-top: 2.5rem;         /* 40px */
+  }
+  
+/* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .page-title h2 {
+      font-size: 2rem;          /* 32px on mobile */
+    }
+    
+    .about-content {
+      font-size: 1rem;          /* 16px on mobile */
+    }
+  }
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .case-study-gallery {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+        
+    .case-study-item img {
+        height: 250px;
+    }
+
+    nav ul {
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .social-links {
+        margin-left: 0;
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+        .form-container {
+            margin: 30px 15px;
+            padding: 20px;
+        }
+        
+    .form-container h1 {
+        font-size: 1.8rem;   
+    }
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Tablet: 768px - 1024px */
+@media (max-width: 1024px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .card {
+        margin: 20px 0;
+        max-width: 80%;
+    }
+    
+    .side-by-side {
+        flex-direction: column;
+    }
+    
+    .case-study-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Large Mobile: 481px - 767px */
+@media (max-width: 767px) {
+    #navbar {
+        flex-wrap: wrap;
+        padding: 15px;
+    }
+    
+    .links {
+        order: 3; /* Moves below logo */
+        width: 100%;
+        justify-content: center;
+        margin-top: 15px;
+        gap: 15px;
+    }
+    
+    .social-links {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .form-container,
+    .title,
+    #project-cta {
+        padding: 20px;
+    }
+    
+    .case-study-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Small Mobile: 320px - 480px */
+@media (max-width: 480px) {
+    #navbar a {
+        font-size: 0.9rem;
+    }
+    
+    .links {
+        gap: 10px;
+    }
+    
+    .side-by-side .text-container a,
+    #project-cta a {
+        width: 100%;
+    }
+    
+    .card {
+        padding: 20px;
+        margin: 15px 0;
+    }
+    
+    .footer-section {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        padding-right: 0;
+    }
+}
+
+/* Special Cases */
+@media (max-width: 350px) {
+    #navbar a {
+        font-size: 0.8rem;
+    }
+    
+    .logo span {
+        font-size: 0.9rem;
+    }
+}
+    
+}
