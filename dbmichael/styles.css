@@ -54,6 +54,10 @@ img {
     padding: 5px 0; /* Better click area */
 }
 
+#navbar a:hover {
+    color: #e07d3a;
+}
+
 .links {
     display: flex;
     align-items: center;
@@ -628,7 +632,231 @@ width: 0;
     font-size: 1.25rem;         /* 20px */
     margin-top: 2.5rem;         /* 40px */
   }
+
+  /* ===== NAVBAR ===== */
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  background: var(--white);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.logo img {
+  transition: var(--transition);
+}
+
+.logo:hover img {
+  transform: rotate(15deg);
+}
+
+.links {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.links a {
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.links a:hover {
+  color: var(--primary);
+}
+
+.social-link {
+  font-size: 1.1rem;
+}
+
+/* ===== PROJECT PAGE ===== */
+.project-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 5%;
+}
+
+.project-heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.project-heading h2 {
+  font-size: 3rem;
+  margin: 0 0 10px;
+  line-height: 1.2;
+}
+
+.project-heading p {
+  color: var(--medium);
+  margin: 5px 0;
+}
+
+.project-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+}
+
+.project-obj img {
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  margin: 30px 0;
+}
+
+.breakdown {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 50px 0 20px;
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--primary);
+  margin-top: 10px;
+}
+
+strong {
+  color: var(--dark);
+  font-weight: 700;
+}
+
+/* ===== PORTFOLIO PAGE - ORLANDO FILM FESTIVAL ===== */
+/* Only styles elements within .project-page container */
+.project-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 5%;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: #222;
+  }
   
+  /* Project Header */
+  .project-heading {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .project-heading h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #222;
+  }
+  
+  .project-heading p {
+    color: #555;
+    margin: 5px 0;
+  }
+  
+  /* Content Sections */
+  .project-obj,
+  .breakdown {
+    max-width: 800px;
+    margin: 0 auto 60px;
+  }
+  
+  .project-page img {
+    width: 100%;
+    border-radius: 8px;
+    margin: 30px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+  
+  /* Headings */
+  .project-page h2 {
+    font-size: 1.8rem;
+    margin: 50px 0 20px;
+    position: relative;
+  }
+  
+  .project-page h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #ff924f;
+    margin-top: 10px;
+  }
+  
+  /* Text Styles */
+  .project-page strong {
+    color: #222;
+    font-weight: 700;
+  }
+  
+  /* Next Project Link */
+  .project-content > a {
+    display: inline-block;
+    margin-top: 50px;
+    font-weight: 700;
+    color: #ff924f;
+    padding: 10px 20px;
+    border: 2px solid #ff924f;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+  
+  .project-content > a:hover {
+    background: #ff924f;
+    color: white;
+  }
+  
+  /* Gallery Section */
+  .project-showcase-gallery {
+    margin: 40px 0;
+  }
+  
+  .project-showcase-gallery h2 {
+    margin-bottom: 30px;
+  }
+  
+  /* Horizontal Rules */
+  .project-page hr {
+    border: 0;
+    height: 1px;
+    background: #eee;
+    margin: 40px 0;
+}
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .project-heading h2 {
+      font-size: 2rem;
+    }
+    
+    .project-page h2 {
+      font-size: 1.5rem;
+    }
+    
+    .project-obj,
+    .breakdown {
+      margin-bottom: 40px;
+    }
+}
+
 /* ===== RESPONSIVE ===== */
   @media (max-width: 768px) {
     .page-title h2 {
@@ -763,6 +991,7 @@ width: 0;
         padding-right: 0;
     }
 }
+
 
 /* Special Cases */
 @media (max-width: 350px) {
