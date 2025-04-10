@@ -48,7 +48,6 @@ img {
 #navbar a {
     text-decoration: none;
     color: black;
-    font-size: 1rem;
     font-weight: 500;
     white-space: nowrap; /* Prevent line breaks */
     padding: 5px 0; /* Better click area */
@@ -591,32 +590,28 @@ width: 0;
     margin-bottom: 1.5rem;      /* 24px */
     text-align: center;
     position: relative;
-  }
+}
   
-  /* ===== Content Container ===== */
-  .content-container {
+/* ===== Content Container ===== */
+.content-container {
     max-width: 720px;           /* Optimal reading width */
     margin: 0 auto;
     padding: 0 1.5rem;          /* Responsive side padding */
-  }
+}
   
-  /* ===== Typography ===== */
-  .about-content {
+/* ===== Typography ===== */
+.about-content {
     font-size: 1.125rem;        /* 18px base */
     line-height: 1.7;           /* Improved readability */
     color: #262626;
-  }
-  
-  .about-content p {
-    margin-bottom: 1.5rem;      /* Consistent paragraph spacing */
-  }
-  
-  .about-content strong {
+}
+
+.about-content strong {
     color: #ff924f;                /* Darker for emphasis */
     font-weight: 600;
-  }
+}
 
-  .about-image-right {
+.about-image-right {
     width: 200px;
     height: 200px;
     border-radius: 15%; /* Circular image */
@@ -625,15 +620,15 @@ width: 0;
     margin: 0 0 1.5rem 1.5rem; /* Space between image and text */
     object-fit: cover;
 }
-  
-  /* ===== Decorative Elements ===== */
-  .about-content p:last-child {
+
+/* ===== Decorative Elements ===== */
+.about-content p:last-child {
     text-align: center;
     font-size: 1.25rem;         /* 20px */
     margin-top: 2.5rem;         /* 40px */
-  }
+}
 
-  /* ===== NAVBAR ===== */
+/* ===== NAVBAR ===== */
 #navbar {
   display: flex;
   justify-content: space-between;
@@ -692,7 +687,6 @@ width: 0;
 
 .project-heading {
   text-align: center;
-  margin-bottom: 60px;
 }
 
 .project-heading h2 {
@@ -709,7 +703,6 @@ width: 0;
 .project-content {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 60px;
 }
 
 .project-obj img {
