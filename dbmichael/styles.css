@@ -649,10 +649,6 @@ width: 0;
   font-size: 1.2rem;
 }
 
-.logo img {
-  transition: var(--transition);
-}
-
 .logo:hover img {
   transform: rotate(15deg);
 }
