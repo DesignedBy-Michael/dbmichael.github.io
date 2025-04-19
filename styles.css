@@ -847,150 +847,45 @@ strong {
 }
 
 /* ===== RESPONSIVE ===== */
-  @media (max-width: 768px) {
-    .page-title h2 {
-      font-size: 2rem;          /* 32px on mobile */
+/* PHONE (under 768px) - Default styles already cover this */
+
+/* TABLET (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .page-title h2 { font-size: 2.25rem; } /* Slightly larger than mobile */
+    
+    .case-study-gallery {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns */
     }
     
-    .about-content {
-      font-size: 1rem;          /* 16px on mobile */
+    .card-container {
+      flex-direction: row; /* Side-by-side cards */
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .card {
+      max-width: 45%; /* Two cards per row */
+      margin: 15px;
     }
   }
-
-@media (max-width: 768px) {
+  
+  /* DESKTOP (1024px and up) */
+  @media (min-width: 1024px) {
+    .page-title h2 { font-size: 2.5rem; }
+    
     .header-container {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    .case-study-gallery {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-        
-    .case-study-item img {
-        height: 250px;
-    }
-
-    nav ul {
-        gap: 1rem;
-        text-align: center;
-    }
-
-    .social-links {
-        margin-left: 0;
-        justify-content: center;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-        .form-container {
-            margin: 30px 15px;
-            padding: 20px;
-        }
-        
-    .form-container h1 {
-        font-size: 1.8rem;   
-    }
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-
-    /* Tablet: 768px - 1024px */
-@media (max-width: 1024px) {
-    .card-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .card {
-        margin: 20px 0;
-        max-width: 80%;
-    }
-    
-    .side-by-side {
-        flex-direction: column;
+      flex-direction: row; /* Horizontal layout */
     }
     
     .case-study-gallery {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Large Mobile: 481px - 767px */
-@media (max-width: 767px) {
-    #navbar {
-        flex-wrap: wrap;
-        padding: 15px;
-    }
-    
-    .links {
-        order: 3; /* Moves below logo */
-        width: 100%;
-        justify-content: center;
-        margin-top: 15px;
-        gap: 15px;
-    }
-    
-    .social-links {
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    .form-container,
-    .title,
-    #project-cta {
-        padding: 20px;
-    }
-    
-    .case-study-gallery {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Small Mobile: 320px - 480px */
-@media (max-width: 480px) {
-    #navbar a {
-        font-size: 0.9rem;
-    }
-    
-    .links {
-        gap: 10px;
-    }
-    
-    .side-by-side .text-container a,
-    #project-cta a {
-        width: 100%;
-    }
-    
-    .card {
-        padding: 20px;
-        margin: 15px 0;
-    }
-    
-    .footer-section {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
+      grid-template-columns: repeat(3, 1fr); /* 3 columns */
     }
     
     .services-grid {
-        grid-template-columns: 1fr;
-        padding-right: 0;
-    }
-}
-
-
-/* Special Cases */
-@media (max-width: 350px) {
-    #navbar a {
-        font-size: 0.8rem;
+      grid-template-columns: repeat(3, 1fr); /* 3 services per row */
     }
     
-    .logo span {
-        font-size: 0.9rem;
+    .card {
+      max-width: 30%; /* Three cards per row */
     }
-}
-    
-}
+  }
