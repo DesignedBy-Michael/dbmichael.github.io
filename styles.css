@@ -876,8 +876,77 @@ strong {
 }
 
 /* ===== RESPONSIVE ===== */
-/* PHONE (under 768px) - Default styles already cover this */
-
+/* ===== MOBILE OPTIMIZATION (300px-768px) ===== */
+@media (min-width: 300px) and (max-width: 768px) {
+    /* 1. Root-level fixes */
+    html {
+      overflow-x: hidden;
+      -webkit-text-size-adjust: 100%; /* Prevent font scaling in Safari */
+    }
+    
+    body {
+      width: 100%;
+      font-size: 16px; /* Base mobile font size */
+      line-height: 1.5;
+    }
+  
+    /* 2. Typography hierarchy */
+    h1 {
+      font-size: 1.75rem; /* 28px */
+      line-height: 1.3;
+    }
+    
+    h2 {
+      font-size: 1.5rem; /* 24px */
+    }
+    
+    h3 {
+      font-size: 1.25rem; /* 20px */
+    }
+    
+    p, li, a {
+      font-size: 1rem; /* 16px */
+    }
+  
+    /* 3. Navbar text */
+    #navbar a:not(.logo a) {
+      font-size: 0.9rem; /* Slightly smaller nav links */
+    }
+    
+    .logo a {
+      font-size: 1.1rem; /* Slightly larger logo text */
+    }
+  
+    /* 4. Button/CTA text */
+    .side-by-side .text-container a,
+    #project-cta a,
+    .submit-btn {
+      font-size: 0.95rem; /* Optimized button text */
+      padding: 10px 15px;
+    }
+  
+    /* 5. Content containers */
+    .container,
+    .content-container {
+      width: 100vw;
+      max-width: 100%;
+      padding: 0 15px;
+      margin: 0 auto;
+    }
+  
+    /* 6. Image containment */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    /* 7. Grid items */
+    .case-study-gallery,
+    .services-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem; /* Smaller gap on mobile */
+    }
+  }
 /* TABLET (768px - 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
     .page-title h2 { font-size: 2.25rem; } /* Slightly larger than mobile */
