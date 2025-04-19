@@ -86,9 +86,38 @@ img {
     height: 40px; /* Fixed logo size */
 }
 
-.mobile-menu-toggle {
-    display: none;
+
+/* Mobile Hamburger Styles */
+.hamburger {
+    display: none; /* Hidden by default */
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 10px;
+    margin-left: auto; /* Pushes to right side */
+    z-index: 1000;
 }
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background: #333; /* Match your text color */
+    transition: all 0.3s ease;
+}
+
+/* Hamburger Animation */
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
 
 /* ===== CARDS ===== */
 
@@ -889,3 +918,38 @@ strong {
       max-width: 30%; /* Three cards per row */
     }
   }
+
+  @media (max-width: 767px) {
+    .hamburger {
+        display: block; /* Show hamburger */
+    }
+    
+    .links {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        width: 80%;
+        height: 100vh;
+        background: #fff; /* Match your bg color */
+        flex-direction: column;
+        padding: 80px 30px 30px;
+        transition: 0.3s ease;
+        z-index: 999;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    }
+    
+    .links.active {
+        left: 0;
+    }
+    
+    .links a {
+        margin: 15px 0;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .social-links {
+        margin-top: 30px;
+        justify-content: flex-start !important;
+    }
+}
